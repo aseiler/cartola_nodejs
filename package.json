@@ -1,0 +1,22 @@
+{
+  "name": "cartola",
+  "version": "1.0.0",
+  "description": "Jogo do cartola FC",
+  "main": "node app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aseiler/cartola_nodejs.git"
+  },
+  "author": "Alexandre Seiler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseiler/cartola_nodejs/issues"
+  },
+  "homepage": "https://github.com/aseiler/cartola_nodejs#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
