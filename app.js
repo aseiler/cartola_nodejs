@@ -1,6 +1,8 @@
-	var express = require('express');
-var app = express();
 var https = require('https');
+var express = require('express');
+var cartolaApi = require('./cartola_api');
+var app = express();
+
 
 //Definir root
 app.get('/', function(req, res) {
@@ -15,8 +17,12 @@ app.listen(9000);
 var url_cartola = 'api.cartolafc.globo.com';
 
 app.get('/cartola',function(req, res){
+	getInfoCartola(function(data){
+		res.send(data)
+	});
+});
 
-	var time = '';
+function getInfoCartola(callback){
 	var oRetorno = {}
 	var opt = {
 		host : url_cartola,
@@ -25,10 +31,8 @@ app.get('/cartola',function(req, res){
 		method: 'GET'
 
 	};
-
-// do the GET request
-
 	https.request(opt,function(res){
+		var time = '';
 		console.log(" cartola>statusCode: ", res.statusCode);
 		res.setEncoding('utf8');
 		res.on('data',function (d){
@@ -37,12 +41,8 @@ app.get('/cartola',function(req, res){
 		});
 
 		res.on('end',function(){
-
 			callback(JSON.parse(time));
 		});
 
 	}).end();
-	
-	res.send(oRetorno);
-
-});
+}
