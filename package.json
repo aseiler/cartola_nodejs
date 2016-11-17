@@ -2,9 +2,9 @@
   "name": "cartola",
   "version": "1.0.0",
   "description": "Jogo do cartola FC",
-  "main": "node app.js",
+  "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "app.js"
   },
   "repository": {
     "type": "git",
