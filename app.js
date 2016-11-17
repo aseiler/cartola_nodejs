@@ -1,6 +1,6 @@
 var https = require('https');
 var express = require('express');
-var cartolaApi = require('./cartola_api');
+var cartolaApi = require('./cartola_api.js');
 var app = express();
 
 
@@ -20,6 +20,11 @@ app.get('/cartola',function(req, res){
 	getInfoCartola(function(data){
 		res.send(data)
 	});
+});
+
+app.get('/teste',function (req,res){
+	cartolaApi.ImHere();
+	res.send('aqui');
 });
 
 function getInfoCartola(callback){
