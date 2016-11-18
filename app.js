@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 });
 
 // Aplicação disponível em http://127.0.0.1:9000/
-app.listen(9000);
+app.listen(80);
 
 
 //Acessando API do Cartola
